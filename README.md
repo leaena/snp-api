@@ -8,13 +8,33 @@ This little program will cure all that ails you. Or at least allow you to be an 
 The little server is written in Python/[Flask](http://flask.pocoo.org/) and it makes extensive use of the beautiful (and aptly named) [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/) web scraper. Each specified endpoint returns a JSON object. More endpoints may be added in the future, this is very much a work in progress.
 ___
 
+##Installation:
+Clone the repository, create a virtual environment in the directory, and start using it:
+```
+git clone https://
+cd snpedia-api
+virtualenv venv --distribute
+source venv/bin/activate
+```
+
+Then, install the required packages:
+```
+pip install -r requirements.txt
+```
+
+You're good to go. Start it with:
+```
+gunicorn server:app
+
+___
+
 ##Getting Started:
 
-There are serveral ways to use SNP-API. The easiest (but sometimes slower) way is to use my hosted version at http://snp-api.herokuapps.com.
+Everything you know to use SNP-API (it's pretty straight-forward there are only two endpoints currently).
 
 To get info on an RSID from the web version use /snp/api/{rsid}:
 ```
-curl -i http:/snp-api.herokuapps.com/snp/api/rs15793179
+curl -i http:/127.0.0.1:5000/snp/api/rs15793179
 ```
 The response:
 ```
@@ -54,29 +74,7 @@ Date: Sun, 26 Jan 2014 22:28:18 GMT
 ```
 
 _As an aside, capitalization doesn't matter!_
-___
-##Using on Your Own:
-Clone the repository, create a virtual environment in the directory, and start using it:
-```
-git clone https://
-cd snpedia-api && virtualenv .
-source venv/bin/activate
-```
 
-Then, install the required packages:
-```
-pip install -r requirements.txt
-```
-
-You're good to go. Start it with:
-```
-gunicorn server:app
-```
-
-And to curl (assuming you cloned to your computer):
-```
-curl -i http://127.0.0.1:5000/snp/api/...
-```
 ___
 ##TODOS:
 
@@ -85,3 +83,4 @@ ___
 * Include more query types?
   * Include a search wrapper to find rsids by trait?
 * Hookup directly to 23andme API?
+* Heroku deploy? is that necessary?
