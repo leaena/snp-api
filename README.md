@@ -11,7 +11,7 @@ ___
 ##Installation:
 Clone the repository, create a virtual environment in the directory, and start using it:
 ```
-git clone https://
+git clone git@github.com:leaena/snp-api.git
 cd snpedia-api
 virtualenv venv --distribute
 source venv/bin/activate
