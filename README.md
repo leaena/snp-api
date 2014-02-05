@@ -1,7 +1,6 @@
 #SNP-API
 ###The only SNPedia wrapper you'll ever need
 ###(maybe, if you needed one to begin with)
-#####(I like to call it snip-appy, btw)
 This little program will cure all that ails you. Or at least allow you to be an awesome armchair geneticist! What started out as a way to scrape information from [SNPedia.com](http://snpedia.com/) for a client project turned into a side hobby of trying to see how much information I could pull using a handrolled API.
 
 The little server is written in Python/[Flask](http://flask.pocoo.org/) and it makes extensive use of the beautiful (and aptly named) [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/) web scraper. Each specified endpoint returns a JSON object. More endpoints may be added in the future, this is very much a work in progress.
